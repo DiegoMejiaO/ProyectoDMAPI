@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "p1pxM82tyFM7x9MtwH/pgPEW9+eGbqNVekRhEcRtqOE6y+pUC6opIZNbYDBz1rLnil4qrP6DPA18mPI7FjUKSg==",
+  "dgSpecHash": "0l3L7YX8pdi6DRKg9IuOKrTDTKwgOpEr18aQm3NlJovZMb3Z9K6wsHQo5yd3h9wDBHmU86xXcQQjw6dCACMTWA==",
   "success": true,
   "projectFilePath": "C:\\Proyecto Xamarin\\ProyectoDMAPI\\ProyectoDMAPI\\ProyectoDMAPI.csproj",
   "expectedPackageFiles": [
@@ -59,6 +59,7 @@
     "C:\\Users\\dmejia\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",
     "C:\\Users\\dmejia\\.nuget\\packages\\messagepack.annotations\\2.1.152\\messagepack.annotations.2.1.152.nupkg.sha512",
     "C:\\Users\\dmejia\\.nuget\\packages\\messagepackanalyzer\\2.1.152\\messagepackanalyzer.2.1.152.nupkg.sha512",
+    "C:\\Users\\dmejia\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.20\\microsoft.aspnetcore.authentication.jwtbearer.6.0.20.nupkg.sha512",
     "C:\\Users\\dmejia\\.nuget\\packages\\microsoft.aspnetcore.razor.language\\6.0.0\\microsoft.aspnetcore.razor.language.6.0.0.nupkg.sha512",
     "C:\\Users\\dmejia\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\5.0.0\\microsoft.bcl.asyncinterfaces.5.0.0.nupkg.sha512",
     "C:\\Users\\dmejia\\.nuget\\packages\\microsoft.build\\17.3.2\\microsoft.build.17.3.2.nupkg.sha512",

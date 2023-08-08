@@ -265,3 +265,4 @@ C:\Proyecto Xamarin\ProyectoDMAPI\ProyectoDMAPI\bin\Debug\net6.0\Microsoft.Ident
 C:\Proyecto Xamarin\ProyectoDMAPI\ProyectoDMAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
 C:\Proyecto Xamarin\ProyectoDMAPI\ProyectoDMAPI\bin\Debug\net6.0\Microsoft.SqlServer.Server.dll
 C:\Proyecto Xamarin\ProyectoDMAPI\ProyectoDMAPI\bin\Debug\net6.0\System.Memory.Data.dll
+C:\Proyecto Xamarin\ProyectoDMAPI\ProyectoDMAPI\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
