@@ -12,55 +12,55 @@ namespace ProyectoDMAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ClientsController : ControllerBase
+    public class UserController : ControllerBase
     {
         private readonly ProyectoDMAPIDbContext _context;
 
-        public ClientsController(ProyectoDMAPIDbContext context)
+        public UserController(ProyectoDMAPIDbContext context)
         {
             _context = context;
         }
 
-        // GET: api/Clients
+        // GET: api/User
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Client>>> GetClient()
+        public async Task<ActionResult<IEnumerable<User>>> GetUsers()
         {
-          if (_context.Clients == null)
+          if (_context.Users == null)
           {
               return NotFound();
           }
-            return await _context.Clients.ToListAsync();
+            return await _context.Users.Include(u => u.Role).ToListAsync();
         }
 
-        // GET: api/Clients/5
+        // GET: api/User/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Client>> GetClient(long id)
+        public async Task<ActionResult<User>> GetUser(long id)
         {
-          if (_context.Clients == null)
+          if (_context.Users == null)
           {
               return NotFound();
           }
-            var client = await _context.Clients.FindAsync(id);
+            var user = await _context.Users.FindAsync(id);
 
-            if (client == null)
+            if (user == null)
             {
                 return NotFound();
             }
 
-            return client;
+            return user;
         }
 
-        // PUT: api/Clients/5
+        // PUT: api/User/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutClient(long id, Client client)
+        public async Task<IActionResult> PutUser(long id, User user)
         {
-            if (id != client.Id)
+            if (id != user.Id)
             {
                 return BadRequest();
             }
 
-            _context.Entry(client).State = EntityState.Modified;
+            _context.Entry(user).State = EntityState.Modified;
 
             try
             {
@@ -68,7 +68,7 @@ namespace ProyectoDMAPI.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!ClientExists(id))
+                if (!UserExists(id))
                 {
                     return NotFound();
                 }
@@ -81,44 +81,44 @@ namespace ProyectoDMAPI.Controllers
             return NoContent();
         }
 
-        // POST: api/Clients
+        // POST: api/User
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Client>> PostClient(Client client)
+        public async Task<ActionResult<User>> PostUser(User user)
         {
-          if (_context.Clients == null)
+          if (_context.Users == null)
           {
-              return Problem("Entity set 'ProyectoDMAPIDbContext.Client'  is null.");
+              return Problem("Entity set 'ProyectoDMAPIDbContext.Users'  is null.");
           }
-            _context.Clients.Add(client);
+            _context.Users.Add(user);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetClient", new { id = client.Id }, client);
+            return CreatedAtAction("GetUser", new { id = user.Id }, user);
         }
 
-        // DELETE: api/Clients/5
+        // DELETE: api/User/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteClient(long id)
+        public async Task<IActionResult> DeleteUser(long id)
         {
-            if (_context.Clients == null)
+            if (_context.Users == null)
             {
                 return NotFound();
             }
-            var client = await _context.Clients.FindAsync(id);
-            if (client == null)
+            var user = await _context.Users.FindAsync(id);
+            if (user == null)
             {
                 return NotFound();
             }
 
-            _context.Clients.Remove(client);
+            _context.Users.Remove(user);
             await _context.SaveChangesAsync();
 
             return NoContent();
         }
 
-        private bool ClientExists(long id)
+        private bool UserExists(long id)
         {
-            return (_context.Clients?.Any(e => e.Id == id)).GetValueOrDefault();
+            return (_context.Users?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }
