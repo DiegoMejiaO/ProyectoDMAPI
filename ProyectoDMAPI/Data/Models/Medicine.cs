@@ -8,7 +8,7 @@ namespace ProyectoDMAPI.Data.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public long Id { get; set; }
-        public DateTime Date { get; set; } = DateTime.Now;
+        public DateTime Date { get; set; }
         public string Name { get; set; } = string.Empty;
         public int Quantity { get; set; }
         public string Day { get; set; } = string.Empty;
