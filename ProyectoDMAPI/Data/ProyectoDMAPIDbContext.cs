@@ -18,6 +18,8 @@ namespace ProyectoDMAPI.Data
         public DbSet<UserRole> UserRoles { get; set; } = default!;
         public DbSet<User> Users { get; set; } = default!;
         public DbSet<Medicine> Medicines { get; set; } = default;
+        public DbSet<Schedule> Schedules { get; set; } = default;
+        public DbSet<Pacient> Pacients { get; set; } = default!;
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -25,6 +27,8 @@ namespace ProyectoDMAPI.Data
             modelBuilder.Entity<UserRole>().ToTable(nameof(UserRole));
             modelBuilder.Entity<User>().ToTable(nameof(User));
             modelBuilder.Entity<Medicine>().ToTable(nameof(Medicine));
+            modelBuilder.Entity<Schedule>().ToTable(nameof(Schedule));
+            modelBuilder.Entity<Pacient>().ToTable(nameof(Pacient));
 
             base.OnModelCreating(modelBuilder);
         }

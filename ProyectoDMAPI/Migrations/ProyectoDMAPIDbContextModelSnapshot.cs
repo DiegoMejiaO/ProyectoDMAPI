@@ -17,7 +17,7 @@ namespace ProyectoDMAPI.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "7.0.9")
+                .HasAnnotation("ProductVersion", "7.0.10")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -64,6 +64,9 @@ namespace ProyectoDMAPI.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("Frecuency")
+                        .HasColumnType("int");
+
                     b.Property<string>("Hour")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -75,12 +78,77 @@ namespace ProyectoDMAPI.Migrations
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
 
-                    b.Property<int>("frecuency")
+                    b.HasKey("Id");
+
+                    b.ToTable("Medicine", (string)null);
+                });
+
+            modelBuilder.Entity("ProyectoDMAPI.Data.Models.Pacient", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<float>("PacientHeight")
+                        .HasColumnType("real");
+
+                    b.Property<string>("PacientIdentification")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PacientName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PacientSex")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("PacientWeight")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PacientdAge")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Medicine", (string)null);
+                    b.ToTable("Pacient", (string)null);
+                });
+
+            modelBuilder.Entity("ProyectoDMAPI.Data.Models.Schedule", b =>
+                {
+                    b.Property<long>("IdSchedule")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("IdSchedule"));
+
+                    b.Property<DateTime>("ScheduleDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ScheduleDay")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ScheduleFrecuency")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ScheduleHour")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ScheduleName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ScheduleQuantity")
+                        .HasColumnType("int");
+
+                    b.HasKey("IdSchedule");
+
+                    b.ToTable("Schedule", (string)null);
                 });
 
             modelBuilder.Entity("ProyectoDMAPI.Data.Models.User", b =>

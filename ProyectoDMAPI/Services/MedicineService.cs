@@ -33,7 +33,7 @@ namespace ProyectoDMAPI.Services
                 return null;
             }
 
-            var drogas = await _context.Medicines.Include(u => u.Name).ToListAsync();
+            var drogas = await _context.Medicines.ToListAsync();
 
             return drogas;
         }
