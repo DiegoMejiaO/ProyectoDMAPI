@@ -20,6 +20,7 @@ namespace ProyectoDMAPI.Data
         public DbSet<Medicine> Medicines { get; set; } = default;
         public DbSet<Schedule> Schedules { get; set; } = default;
         public DbSet<Pacient> Pacients { get; set; } = default!;
+        public DbSet<InfPacient> InfPacients { get; set; } = default!;
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -29,6 +30,7 @@ namespace ProyectoDMAPI.Data
             modelBuilder.Entity<Medicine>().ToTable(nameof(Medicine));
             modelBuilder.Entity<Schedule>().ToTable(nameof(Schedule));
             modelBuilder.Entity<Pacient>().ToTable(nameof(Pacient));
+            modelBuilder.Entity<InfPacient>().ToTable(nameof(InfPacient));
 
             base.OnModelCreating(modelBuilder);
         }

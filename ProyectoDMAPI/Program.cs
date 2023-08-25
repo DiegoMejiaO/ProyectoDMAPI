@@ -28,6 +28,7 @@ builder.Services.AddScoped<IAccountService, AccountService>();
 builder.Services.AddScoped<IMedicineService, MedicineService>();
 builder.Services.AddScoped<IScheduleService, ScheduleService>();
 builder.Services.AddScoped<IPacientService, PacientService>();
+builder.Services.AddScoped<IInfPacientService, InfPacientService>();
 
 builder.Services.AddSwaggerGen(option =>
 {

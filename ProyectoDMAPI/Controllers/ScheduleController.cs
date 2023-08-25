@@ -44,7 +44,7 @@ namespace ProyectoDMAPI.Controllers
 
             if (_schedule == null)
             {
-                return Problem("Error creando la nueva periodicidad");
+                return Problem("Error creando la nueva Schedule");
             }
             return Ok();
         }

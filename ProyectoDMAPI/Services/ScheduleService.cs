@@ -40,17 +40,7 @@ namespace ProyectoDMAPI.Services
                 return null;
             }
 
-            var schedules = await _context.Medicines.Select(x => x).ToListAsync();
-
-            //List<Medicine> ListaSchedule = schedules.Select(u => new Medicine()
-            //{
-            //    Date = u.Date,
-            //    Name = u.Name,
-            //    Quantity = u.Quantity,
-            //    Day = u.Day,
-            //    Hour = u.Hour,
-            //    Frecuency = u.Frecuency
-            //}).ToList();
+            var schedules = await _context.Medicines.Select(x => x).ToListAsync();            
 
             return schedules;
         }
