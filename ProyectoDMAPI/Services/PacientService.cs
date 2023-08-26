@@ -33,7 +33,7 @@ namespace ProyectoDMAPI.Services
                 return null;
             }
 
-            var pacientes = await _context.Pacients.Include(u => u.PacientName).ToListAsync();
+            var pacientes = await _context.Pacients.ToListAsync();
 
             return pacientes;
         }
