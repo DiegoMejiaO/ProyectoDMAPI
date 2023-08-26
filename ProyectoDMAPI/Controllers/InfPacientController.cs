@@ -17,7 +17,7 @@ namespace ProyectoDMAPI.Controllers
         }
 
         [HttpPost]
-        [Route("PostObtenerSchedule")]
+        [Route("PostObtenerInfPacient")]
         public async Task<ActionResult<IEnumerable<Pacient>>> PostObtenerInfPacient()
         {
 
@@ -31,7 +31,7 @@ namespace ProyectoDMAPI.Controllers
         }
 
         [HttpPost]
-        [Route("PostCrearSchedule")]
+        [Route("PostCrearInfPacient")]
         public async Task<ActionResult> PostCrearInfpacient(Pacient pacient)
         {
 
